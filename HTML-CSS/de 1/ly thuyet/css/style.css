@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body { font-family: Georgia, "Times New Roman", Times, serif; }
+.container {
+	width: 500px;
+	border: solid 1px #0033FF;
+	margin: 0 auto;
+	font-size: 17.5px;
+}
+a { text-decoration: none; }
+
+/* Wrapping element for profile class */
+#profile-title {
+	font-weight: bold;
+	background: url(../img/title_bg.gif) repeat-x;
+  height: 25px;
+	padding-top: 1%;
+}
+.profile-avatar-info { height: 120px; }
+.profile-avatar-info img {
+  float: left;
+  width: 130px;
+  height: 90%;
+}
+.profile-info {
+  overflow: scroll;
+  height: 100%;
+}
+
+/* Wrapping element for facts class */
+.facts { margin-top: 15px; }
+#facts-title {
+	margin-left: 4px;
+	font-weight: bold;
+}
+.facts ul {
+	margin-top: 7px;
+	margin-left: 2px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.facts ul li {
+  list-style: url(../img/star.gif) inside;
+  margin-left: 35px;
+}
+
+/* Wrapping element for comment-posted class */
+.comment { margin-top: -6px; }
+.comment-posted { font-size: 14px; }
+#comment-posted-content {
+	margin-left: 1px;
+	padding-left: 4px;
+  background: #ECECEC;
+  margin-left: 3px;
+  margin-right: 3px;
+  position: relative;
+}
+#comment-posted-content::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ECECEC;
+  top: 100%;
+  left: 4.5%;
+}
+#comment-posted-spotLight {
+	margin-top: -1px;
+	margin-bottom: -1px;
+	margin-left: 12%;
+}
+.comment-your-comment { margin-top: 20px; }
+#your-comment-title {
+	font-weight: bold;
+  text-align: center;
+}
+.table {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.comment-your-comment td {
+	width: 21%;
+  padding-left: 5px;
+  font-size: 15px;
+}
+input { 
+  width: 35%;
+  height: 20px;
+}
+textarea {
+	max-width: 375px;
+	padding-left: 2.5px;
+}
+
+
+
+
+
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>Thực hành 2</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+        <div class="daily-celebrity">
+          <div class="daily-content">
+            <div class="gossip">
+              <div class="daily-title">
+                <h4>DAILY CELEBRITY GOSSIP</h4>
+              </div>
+              <div class="daily-image">
+                <img src="img/news_1.png" alt="news_1">
+                <div class="daily-image-title">
+                  <img src="img/h3-confidential-showbuzz-bg.gif" alt="h3-confidential-showbuzz-bg">             
+                  <span class="daily-more">MORE</span>
+                </div>
+              </div>
+              <div class="daily-text">
+                <h4>+ RUSSELL CROWE + MORE ...</h4>
+                <p>RUSSELL Crowe's son to mary Keith & Nicole's daughter, plus Renee Zellweger reveals her breast cancer scare</p>
+              </div>
+            </div>			<!-- end gossip -->
+            
+            <div class="pics">
+              <div class="daily-title">
+                <h4>DAILY CELEBRITY PICS</h4>
+              </div>
+              <div class="daily-image">
+                <img src="img/news_2.png" alt="news_2">
+                <div class="daily-image-title">
+                  <img src="img/h3-confidential-shootingstars-bg.gif" alt="h3-confidential-shootingstars-bg">
+                  <span class="daily-more">MORE</span>
+                </div>
+              </div>
+              <div class="daily-text">
+                <h4>+ BECKHAMS, CLAUDIA SCHIFFER</h4>
+                <p>VICTORIA and David Beckham dine out in NY, as top models Claudia Schiffer and Eva Herzigova hit the shops in Milan.</p>
+              </div>
+            </div>			<!-- end pics -->
+          </div>
+          <div class="daily-logo">
+            <img src="img/confidential-logo.gif" alt="confidential-logo">
+          </div>
+        </div>					<!-- end daily -->
+        
+        <div class="movie">
+          <div class="movie-trailer">
+            <div class="movie-title">
+							<h4>TOP 3 MOVIE TRAILERS</h4></div>
+            <div class="trailer-container">
+              <main id="accordion">
+                <section id="item1">
+                  <a onclick="loadContent(1)" href="#item1">
+                    <div id="trailer-title">
+                      <p>The House Bunny (M)</p>
+                      <span class="icon" id="icon1"></span>
+                    </div>
+                  </a>
+                  <div class="trailer-content" id="trailer_icon">
+                    <div class="trailer-img">
+                      <img src="img/top3movie1.jpg" alt="top3movie1">
+                    </div>
+                    <div class="trailer-text">
+                      <p>When Playboy bunny Shell is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta</p>
+                      <a id="watchlink" href="#">
+                        <img id="trailer-img-small" src="img/icon_1.png" alt="icon_1">
+                        <p id="watchnow">Watch Now</p>
+                      </a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </section>
+                <section id="item2">
+                  <a onclick="loadContent(2)" href="#item2">
+                    <div id="trailer-title">Eagle Eye (M)
+                      <span class="icon" id="icon2"></span>
+                    </div>
+                  </a>
+                  <div class="trailer-content">
+                    <div class="trailer-img">
+                      <img src="img/top3movie1.jpg" alt="top3movie1">
+                    </div>
+                    <div class="trailer-text">
+                      <p>When Playboy bunny Shell is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta</p>
+                      <a id="watchlink" href="#">
+                        <img id="trailer-img-small" src="img/icon_1.png" alt="icon_1">
+                        <p id="watchnow">Watch Now</p>
+                      </a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </section>
+                <section id="item3">
+                  <a onclick="loadContent(3)" href="#item3">
+                    <div id="trailer-title">Journey To The Centre Of The Earth (PG)
+                      <span class="icon" id="icon3"></span>
+                    </div>
+                  </a>
+                  <div class="trailer-content">
+                    <div class="trailer-img">
+                      <img src="img/top3movie1.jpg" alt="top3movie1">
+                    </div>
+                    <div class="trailer-text">
+                      <p>When Playboy bunny Shell is tossed out of the mansion, she falls in with the sorority girls form Zeta Alpha Zeta</p>
+                      <a id="watchlink" href="#">
+                        <img id="trailer-img-small" src="img/icon_1.png" alt="icon_1">
+                        <p id="watchnow">Watch Now</p>
+                      </a>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </section>
+              </main>
+            </div>
+            <div class="now-showing">
+              <b>Now Showing</b>
+              <select id="select-movie" name="movie">
+                <option value="Select Movie">Select Movie</option>
+                <option value="Select Movie">Select Movie</option>
+                <option value="Select Movie">Select Movie</option>
+              </select>
+            </div>
+          </div>			<!-- end movie-trailer -->
+          
+          <div class="movie-review">
+            <div class="movie-title">MOVIE REVIEWS</div>
+            <div class="review-container">
+              <h3>Eagle Eye<span class="star star1"></span></h3>
+              <div class="review-content">
+                <div class="review-img">
+                  <img id="review-img-big" src="img/thumb_1.jpg" alt="thumb_1">
+                  <a id="watchlink" href="#">
+                    <img id="review-img-small" src="img/icon_1.png" alt="icon_1">
+                    <p id="view-trailer">View Trailer</p>
+                  </a>
+                </div>
+                <p class="review-text">
+                  SHIA LaBeouf hits the ground running in Eagle eye, an againts the clock conspiracy thriller with a timely technological t...
+                </p>
+              </div>
+            </div>
+						<div class="review-line"></div>
+            
+            <div class="review-container">
+              <h3>House Bunny<span class="star star2"></span></h3>
+              <div class="review-content">
+                <div class="review-img">
+                  <img id="review-img-big" src="img/thumb_2.jpg" alt="thumb_2">
+                  <a id="watchlink" href="#">
+                    <img id="review-img-small" src="img/icon_1.png" alt="icon_1">
+                    <p id="view-trailer">View Trailer</p>
+                  </a>
+                </div>
+                <p class="review-text">
+                  IF YOU left Legally Blonde and Revenge Of The Nerds DVDs in a darkened room for long enough, something like The House Bun...
+                </p>
+              </div>
+							<div class="review-line"></div>
+            </div>
+            
+            <div class="review-footer">
+              <p>
+                <a href="#">
+                  <b>Local Cinema listings</b>
+                </a>
+                <span id="more-movie">+MORE MOVIES</span>
+              </p>
+            </div>
+          </div>		<!-- end movie-review -->
+        </div>			<!-- end movie -->
+				
+      </div>				<!-- end content -->
+			
+      <div class="logo-search">
+        <img src="img/Entertainment.gif" alt="Entertainment">
+        <form>
+          <input type="text">
+          <button type="button" name="search">SEARCH</button>
+        </form>
+      </div>
+			
+      <div class="clear"></div>
+      
+      <div class="navigationbar">
+        <ul class="list-items">
+          <li>
+            <div class="items">
+              <img src="img/phone.jpg" alt="phone">
+              <div class="item-text">News on your mobile</div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <img src="img/RSS.jpg" alt="RSS">
+              <div class="item-text">RSS feeds</div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <img src="img/Newsleter.jpg" alt="Newsleter">
+              <div class="item-text">Newsletter</div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <img src="img/New-stories.jpg" alt="New-stories">
+              <div class="item-text">Send your news stories</div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <img src="img/photo.jpg" alt="photo">
+              <div class="item-text">Send your news photos</div>
+            </div>
+          </li>
+        </ul>
+      </div>			<!-- end navigationbar -->
+      
+      <div class="footer">
+        <ul class="footer-list">
+          <li><a href="#">Help</a> |</li>
+          <li><a href="#"> Contact Us</a> |</li>
+          <li><a href="#"> Advertise with Us</a> |</li>
+          <li><a href="#"> Job Oppotunities</a> |</li>
+          <li><a href="#"> Terms & Conditions</a> |</li>
+          <li><a href="#"> Privacy Policy</a> |</li>
+          <li><a href="#"> Accessibility</a> |</li>
+          <li><a href="#"> Sitemap</a> |</li>
+          <li><a href="#"> News Headlines from Ours Partners</a></li>
+          <p><a id="to-Top" href="#">Back to top</a></p>
+        </ul>
+        <div class="footer-info">Copyright 2008 News Limited. All times AEST (GMT +10)</div>
+      </div>			<!-- end footer -->
+		</div>				<!-- end container -->
+		<script src="js/top3-movie-trailer.js"></script>
+	</body>
+</html>
