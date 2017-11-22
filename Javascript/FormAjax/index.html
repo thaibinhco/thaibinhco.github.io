@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" banner="IE=Edge">
+		<title>FormAjax</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+			<form>
+				<fieldset>
+					<legend>Login</legend>
+					<table id="table_form">
+						<tr>
+							<td>Username:</td>
+							<td>
+								<input id="username" type="text" name="username" placeholder="in 8-50 char" onchange="checkInputUsername()">
+							</td>
+							<th><p id="user_message"></p></th>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td>
+								<input id="password" type="password" name="password" placeholder="in 8-30 char" onchange="checkInputPassword()">
+								</td>
+							<th><p id="pass_message"></p></th>
+						</tr>
+						<tr>
+							<td>Email:</td>
+							<td><input id="email" type="email" name="email" onchange="checkInputEmail()"></td>
+							<th><p id="email_message"></p></th>
+						</tr>
+						<tr>
+							<td>Birthday:</td>
+							<td>
+								<input id="birthday" type="text" name="birthday" placeholder="dd/MM/yyyy" onchange="checkInputBirthday()">	
+								<img src="img/ic_calendar.png" alt="ic_calendar" onclick="changeShow()">
+							</td>
+							<th><p id="birthday_message"></p></th>				
+						</tr>						
+					</table>
+					<input id="btnSubmit" type="button" value="Submit" onclick="submit_login()">
+					<input id="btnRefresh" type="button" value="Refresh" onclick="refresh_login()">
+				</fieldset>
+			</form>
+			
+			<table id="table_calendar">
+				<tbody>
+					<tr class="control">
+						<td class="year" onclick="preYear()">&lt;&lt;</td>
+						<td class="month" onclick="preMonth()">&lt;</td>
+						<td colspan="2">
+							<select id="month" onchange="pickMonth()">
+								<option value="1">January</option>
+								<option value="2">February</option>
+								<option value="3">March</option>
+								<option value="4">April</option>
+								<option value="5">May</option>
+								<option value="6">June</option>
+								<option value="7">July</option>
+								<option value="8">August</option>
+								<option value="9">September</option>
+								<option value="10">October</option>
+								<option value="11">November</option>
+								<option value="12">December</option>
+							</select>
+						</td>
+						<td>
+							<select id="year" onchange="pickYear()"></select>
+						</td>
+						<td class="month" onclick="nextMonth()">&gt;</td>
+						<td class="year" onclick="nextYear()">&gt;&gt;</td>
+					</tr>
+					<tr class="weekdays">
+						<td>Sun</td>
+						<td>Mon</td>
+						<td>Tue</td>
+						<td>Wed</td>
+						<td>Thu</td>
+						<td>Fri</td>
+						<td>Sat</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p id="res"></p>
+		<script type="text/javascript" src="js/form_ajax.js"></script>
+		<script type="text/javascript" src="js/calendar.js"></script>
+  </body>
+</html>
