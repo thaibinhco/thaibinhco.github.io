@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body { font-family: Verdana, "Arial", Helvetica, sans-serif; }
+
+/* Wrapping element for frame class */
+.frame {
+  width: 1250px;
+  margin: 0 auto;
+  position: relative;
+}
+.frame-text {
+  width: 400px;
+  margin-left: 10%;
+  position: relative;
+}
+p { 
+  color: white;
+  font-size: 12px;
+  text-align: justify;
+}
+h4 {
+  color: yellow;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+/* Wrapping element for header class */
+.header {
+	background: #2D2F35 url(../img/bg_home_intro.gif) no-repeat;
+  border-bottom: solid 1px #3F4249;
+}
+
+/* Wrapping element for introduce class */
+.introduce {
+  background: url(../img/bg_home_intro.gif) repeat-x;
+  height: 300px;
+  position: relative;
+}
+.frame-text h3 {
+	font-size: 26px;
+  padding-bottom: 22px;
+  color: yellow;
+  font-family: intial;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+}
+.frame-text p { text-align: left; }
+.introduce img {
+  position: absolute;
+  margin-left: 49%;
+  top: 0;
+}
+
+/* Wrapping element for conttent class */
+.content {
+	background: #2D2F35;
+	border-top: solid 1px #3F4249;
+	border-bottom: solid 1px #3F4249;
+}
+.content-slidebar { border-bottom: solid 1px #3F4249; }
+.frame ul {
+  list-style-type: none;
+  text-align: center;
+  padding-top: 27px;
+  padding-bottom: 10px;
+}
+.frame li {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px; 
+}
+.frame ul li a { display: inline-block; }
+.index {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.content-text { margin-top: 3px; }
+.content-text-left {
+  float: left;
+  width: 32%;
+	padding-bottom: 3%;
+  margin-left: 10%;
+  margin-right: 9%;
+  background: url(../img/home_services_bg_design.gif) no-repeat right bottom;
+}
+.content-text-right {
+  float: right;
+	margin-right: 10%;
+	padding-bottom: 0.5%;
+  width: 33%;
+  background: url(../img/home_services_bg_marketing.gif) no-repeat left top;
+}
+.content-text-right h4 { padding-bottom: 45px; }
+.content-frame-text { margin-left: 0; }
+.clear { clear: both; }
+
+/* Wrapping element for footer class */
+.footer {
+  height: 100px;
+  background: #24262A url(../img/bg_footer.gif) center no-repeat;
+}
+.footer p { text-align: center; }
