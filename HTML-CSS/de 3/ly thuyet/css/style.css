@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: arial;
+  font-size: 0.6875em;
+  color: #595959;
+}
+
+/* Wrapping element for container class */
+.container {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #121214;
+}
+#title {
+  color: white;
+  padding-top: 0.5%;
+}
+.more-info {
+  color: white;
+  text-decoration: none;
+}
+.more-info::before {
+  content: url(../img/arr_1.gif);
+  margin-right: 5px;
+  float: left;
+  padding-top: 3%;
+}
+.more-info.mi::before {  margin-left: 4%; }
+.more-info p { padding-top: 2.5%; }
+
+/* Wrapping element for container-left class */
+.container-left { width: 60%; }
+.content {  margin-top: 5%; }
+.content img {
+  margin-bottom: 8%;
+  width: 27%;
+  float: left;
+  margin-right: 5%;
+}
+.content-text #text {
+  margin-top: 2%;
+  width: 93%;
+}
+#text-p {
+  margin-left: 4%;
+  border-bottom: 1px dotted;
+  padding-bottom: 3%;
+  margin-right: 8%;
+}
+
+/* news in container-left */
+.news {
+  margin-left: 18%;
+  margin-top: 12%;
+  margin-bottom: 5%;
+}
+.news-list {
+  display: flex;
+  margin-top: 4%;
+}
+.news-list ul li::before {
+  content: url(../img/arr.gif);
+  margin-right: 4px;
+}
+.list {  margin-right: 3%;}
+.list ul {
+  list-style-type: none;
+  font-size: 9px;
+}
+.list ul li { padding-bottom: 5%; }
+.list a { color: #595959; }
+.wrap-news {
+  border-bottom: 1px dotted;
+  padding-bottom: 3%;
+}
+/* wrap-content in container-left */
+.wrap-content {
+  margin-left: 15%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+/* Wrapping element for container-right class */
+.wrap-info {
+  background: #232325;
+  padding-top: 27%;
+  margin-top: 20%;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 190px;
+}
+.wrap-info-content {
+  margin: 0 auto;
+  width: 86%;
+  border-top: 1px solid;
+  padding-bottom: 15%;
+  padding-top: 12%;
+}
+.wrap-info-content img {
+  width: 100%;
+  margin-bottom: 11%;
+	border-radius: 13px;
+}
+.info-text {
+  font-size: 8.5px;
+  padding-bottom: 15%;
+}
+span.p-big { font-size: 10px; }
+p#info-text-p { margin-top: 2%; }
