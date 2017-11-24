@@ -1,37 +1,37 @@
 $(document).ready(function() {
 	var SlideModule = (function() {
 		
-		var slide = $(".slide");
-		var listIndex = $(".list-index");
+		var slide = $(".mySlides");
+		var dots = $(".dot");
 		var currIndex = 0
 		var interval;
-		var timeTick = 2000;
+		var timerSlide = 2000;
 
 		var SlideModule = function() {}
 
 		var SlideModule = function(time) {
-			timeTick = time;
+			timerSlide = time;
 		}
 
-		var slideShow = function(newIndex) {
+		var showSlides = function(newIndex) {
 			$(slide[currIndex]).css("display", "none");
-			listIndex[currIndex].className = listIndex[currIndex].className.replace(" boder-index", "");
-
+			dots[currIndex].className = dots[currIndex].className.replace(" active", "");
+			
 			$(slide[newIndex]).css("display", "block");
-			listIndex[newIndex].className += " boder-index";
+			dots[newIndex].className += " active";
 
 			interval = setInterval(function() {
 				currIndex = newIndex;
 				newIndex = (newIndex < slide.length - 1) ? newIndex + 1 : 0;
-				slideShow(newIndex);
-			}, timeTick);
+				showSlides(newIndex);
+			}, timerSlide);
 		}
 
 		var slideInt = function() {
-			slideShow(currIndex);
+			showSlides(currIndex);
 		}
 
-		var preSlide = function() {
+		var prev = function() {
 			var newIndex;
 			if (currIndex > 0) {
 				newIndex = currIndex - 1;
@@ -42,23 +42,23 @@ $(document).ready(function() {
 			slideShow(newIndex);
 		}
 		
-		var nextSlide = function() {
+		var next = function() {
 			var newIndex = (currIndex < slide.length - 1) ? currIndex + 1 : 0;
 			clearInterval(interval);
-			slideShow(newIndex);
+			showSlides(newIndex);
 		}
 
-		var clickSlide = function(iPic) {
+		var click = function(idot) {
 			clearInterval(interval);
-			slideShow(iPic);
+			showSlides(idot);
 		}
 
 		SlideModule.prototype = {
 			constructor: SlideModule,
 			show: slideInt,
-			previous: preSlide,
-			next: nextSlide,
-			click: clickSlide
+			prev: prev,
+			next: next,
+			click: click
 		}
 
 		return SlideModule;
@@ -68,15 +68,15 @@ $(document).ready(function() {
 
 	slideModule.show();
 
-	$("#btn_pre").click(function() {
-		slideModule.previous();
+	$("#prev").click(function() {
+		slideModule.prev();
 	});
 
-	$("#btn_next").click(function() {
+	$("#next").click(function() {
 		slideModule.next();
 	});
 
-	$(".list-index").click(function() {
-		slideModule.click($(".list-index").index(this));
+	$(".dot").click(function() {
+		slideModule.click($(".dot").index(this));
 	});
 });
