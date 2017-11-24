@@ -1,0 +1,23 @@
+body {
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+
+div { margin-top: auto; }
+p {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+#board {
+	margin: 100px;
+	padding-left:85px;
+}
+
+#name {
+	color: #00BCD4;
+	margin-top: -295px;
+	font-size: 15px;
+	font-family: Arial;
+}
