@@ -1,12 +1,12 @@
-var CURR_INDEX = 0;
 var RUNAUTO;
-
+var CURR_INDEX = 0;
 var OLD_INDEX = CURR_INDEX;
-showSlide();
 
-function showSlide() {
-	var slide = $(".slider");
-	var listIndex = $(".list-index");
+showSlides();
+
+function showSlides() {
+	var slide = $(".mySlides");
+	var dots = $(".dot");
 
 	if (CURR_INDEX >= slide.length) {
 		CURR_INDEX = 0;
@@ -17,32 +17,32 @@ function showSlide() {
 	}
 
 	/* OLD_INDEX */
-	$(slide[OLD_INDEX]).css("display", "none");
-	listIndex[OLD_INDEX].className = listIndex[OLD_INDEX].className.replace(" boder-index", "");
+	slide[OLD_INDEX].style.display = "none";
+	dots[OLD_INDEX].className = dots[OLD_INDEX].className.replace(" active", "");
 	
 	/* CURR_INDEX */
-	$(slide[CURR_INDEX]).css("display", "block");
-	listIndex[CURR_INDEX].className += " boder-index";
+	slide[CURR_INDEX].style.display = "block";
+	dots[CURR_INDEX].className += " active";
 	
 	clearTimeout(RUNAUTO);
 	RUNAUTO = setTimeout(function() {
 		OLD_INDEX = CURR_INDEX++;
-		showSlide();
+		showSlides();
 	}, 2000);
 }
 
-$("#btn_pre").click(function() {
+$(".prev").click(function() {
 	OLD_INDEX = CURR_INDEX--;
-	showSlide();
+	showSlides();
 });
 
-$("#btn_next").click(function() {
+$(".next").click(function() {
 	OLD_INDEX = CURR_INDEX++;
-	showSlide();
+	showSlides();
 });
 
-$(".list-index").click(function() {
+$(".dot").click(function() {
 	OLD_INDEX = CURR_INDEX;
-	CURR_INDEX = $(".list-index").index(this);
-	showSlide();
+	CURR_INDEX = $(".dot").index(this);
+	showSlides();
 });
