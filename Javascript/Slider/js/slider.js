@@ -1,12 +1,12 @@
-var CURR_INDEX = 0;
 var RUNAUTO;
-
+var CURR_INDEX = 0;
 var OLD_INDEX = CURR_INDEX;
-showSlide();
 
-function showSlide() {
-	var slide = document.getElementsByClassName("slide");
-	var listIndex = document.getElementsByClassName("list-index");
+showSlides();
+
+function showSlides() {
+	var slide = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
 
 	if (CURR_INDEX >= slide.length) {
 		CURR_INDEX = 0;
@@ -18,31 +18,31 @@ function showSlide() {
 
 	/* OLD_INDEX */
 	slide[OLD_INDEX].style.display = "none";
-	listIndex[OLD_INDEX].className = listIndex[OLD_INDEX].className.replace(" boder-index", "");
+	dots[OLD_INDEX].className = dots[OLD_INDEX].className.replace(" active", "");
 	
 	/* CURR_INDEX */
 	slide[CURR_INDEX].style.display = "block";
-	listIndex[CURR_INDEX].className += " boder-index";
+	dots[CURR_INDEX].className += " active";
 	
 	clearTimeout(RUNAUTO);
 	RUNAUTO = setTimeout(function() {
 		OLD_INDEX = CURR_INDEX++;
-		showSlide();
+		showSlides();
 	}, 2000);
 }
 
-function preSlide() {
+function prev() {
 	OLD_INDEX = CURR_INDEX--;
-	showSlide();
+	showSlides();
 }
 
-function nextSlide() {
+function next() {
 	OLD_INDEX = CURR_INDEX++;
-	showSlide();
+	showSlides();
 }
 
-function picChosse(iPic) {
+function chossePic(iPic) {
 	OLD_INDEX = CURR_INDEX;
 	CURR_INDEX = iPic;
-	showSlide();
+	showSlides();
 }
