@@ -4,12 +4,12 @@ var myData = {
 };
 
 var setting = {
-    color: ["#6382bf", "#e6655b", "#e42a1d", "#00BCD4"],
-    height: 100,
-    space: 30,
-    lineColor: ["#6382bf", "#e6655b"],
+    color: ["#456AA4", "#E4322B", "#E4322B", "#44a0cc"],
+    height: 200,
+    space: 18,
+    lineColor: ["#486CA4", "#E43831"],
     widthLine: 5,
-    radius: 0.7,
+    radius: 0.79,
 };
 
 var pieChart = (function() {
@@ -49,7 +49,7 @@ var pieChart = (function() {
     var y = canvas.height;
     var r = Math.min(canvas.width / 2, canvas.height / 2) * setting.radius;
     var scaleX = 0.9;
-    var scaleY = 0.4;
+    var scaleY = 0.3;
     ctx.scale(scaleX, scaleY);
     var lastPoint;
     var space = setting.space;
@@ -100,7 +100,7 @@ var pieChart = (function() {
         }
     }
 		
-    function drawPie() {
+    function drawChart() {
         for (var height = 0; height < setting.height; height++) {
             drawPie(height);
             if (height == 100 - 1) {
@@ -118,8 +118,8 @@ var pieChart = (function() {
 						
             var pX = x + r / 1.3 * Math.cos(lastPoint + slice / 2);
             var pY = y - setting.height + r / 1.4 * Math.sin(lastPoint + slice / 2);
-            ctx.font = "28px arial";
-            ctx.fillStyle = "black";
+            ctx.font = "30px arial";
+            ctx.fillStyle = "#837F83";
             var info = data[i] * 100 / total;
             
             ctx.beginPath();
@@ -148,10 +148,10 @@ var pieChart = (function() {
     }
     
     return {
-        drawPie: drawPie,
+        drawChart: drawChart,
     }
 })();
 
 $(document).ready(function() {
-    pieChart.drawPie();
+    pieChart.drawChart();
 });

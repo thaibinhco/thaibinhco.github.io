@@ -1,9 +1,12 @@
+var TIME;
+
 $(document).ready(function() {
 	var SlideModule = (function() {
-		
-		var slide = $(".mySlides");
-		var dots = $(".dot");
+		var img = $(".img");
+		var thumbs = $(".thumb");
 		var currIndex = 0
+		var speed = 1000;
+		
 		var interval;
 		var timerSlide = 2000;
 
@@ -13,52 +16,74 @@ $(document).ready(function() {
 			timerSlide = time;
 		}
 
-		var showSlides = function(newIndex) {
-			$(slide[currIndex]).css("display", "none");
-			dots[currIndex].className = dots[currIndex].className.replace(" active", "");
-			
-			$(slide[newIndex]).css("display", "block");
-			dots[newIndex].className += " active";
-
-			interval = setInterval(function() {
-				currIndex = newIndex;
-				newIndex = (newIndex < slide.length - 1) ? newIndex + 1 : 0;
-				showSlides(newIndex);
+		var showSlide = function(newIndex) {
+			stopSlide(currIndex);
+			currIndex = newIndex;
+			startSlide(currIndex);
+			blurSlide(currIndex);
+			effectSlider(newIndex);
+			loopimg();
+		}
+		
+		function stopSlide(index) {
+			img.eq(index).hide();
+			$("#thumb"+(index)).removeClass('active');
+		}
+		
+		function startSlide(index) {
+			img.eq(index).show();
+			$("#thumb"+(index)).addClass('active');
+		}
+		
+		function blurSlide(index) {
+			img.css({"opacity": "0"});
+			thumbs.css("opacity", "0.3");
+			thumbs.eq(index).css("opacity", "1");
+		}
+		
+		function effectSlider(index) {
+			img.eq(index).css({"opacity": "1"});
+			img.animate({right: 345 * index}, speed);
+		}
+		
+		function loopimg() {
+			clearTimeout(TIME);
+			TIME = setTimeout(function() {
+				nextSlide();
 			}, timerSlide);
 		}
 
 		var slideInt = function() {
-			showSlides(currIndex);
+			showSlide(currIndex);
 		}
 
-		var prev = function() {
-			var newIndex;
-			if (currIndex > 0) {
-				newIndex = currIndex - 1;
-			} else {
-				newIndex = slide.length - 1;
+		var prevSlide = function() {
+			var newIndex = currIndex - 1;
+			if (currIndex < 0) {
+				newIndex = img.length - 1;
 			}
-			clearInterval(interval);
-			slideShow(newIndex);
+			imghow(newIndex);
 		}
 		
-		var next = function() {
-			var newIndex = (currIndex < slide.length - 1) ? currIndex + 1 : 0;
-			clearInterval(interval);
-			showSlides(newIndex);
+		var nextSlide = function() {
+			var newIndex = currIndex + 1;
+			if (currIndex > img.length - 1) {
+				newIndex = 0;
+			}
+			console.log(img.length);
+			showSlide(newIndex);
 		}
 
-		var click = function(idot) {
-			clearInterval(interval);
-			showSlides(idot);
+		var clickSlide = function(index) {
+			showSlide(index);
 		}
 
 		SlideModule.prototype = {
 			constructor: SlideModule,
 			show: slideInt,
-			prev: prev,
-			next: next,
-			click: click
+			prev: prevSlide,
+			next: nextSlide,
+			click: clickSlide
 		}
 
 		return SlideModule;
@@ -76,7 +101,7 @@ $(document).ready(function() {
 		slideModule.next();
 	});
 
-	$(".dot").click(function() {
-		slideModule.click($(".dot").index(this));
+	$(".thumb").click(function() {
+		slideModule.click($(".thumb").index(this));
 	});
 });

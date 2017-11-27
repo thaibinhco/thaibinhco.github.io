@@ -4,19 +4,31 @@
 	text-align: center;
 }
 
-.myTitle { color: green; }
+.logo { color: green; }
 
-.myTitle img {
+.logo img {
 	width: 100px;
 	height: 100px;
 	margin-bottom: -30px;
 }
 
-.mySlides { display: none; }
-
-.linner img {
+.slides {
 	width: 690px;
 	height: 390px;
+	margin: auto;
+	display: inline;
+	float: left;
+	position: absolute;
+}
+
+.img {
+	width: 690px;
+	height: 390px;
+	opacity: 0;
+	position: relative;
+	transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-webkit-transition: opacity 1.5s ease;
 }
 
 .prev, .next {
@@ -31,18 +43,30 @@
 
 .next { right: 15%; }
 
-.dots {
+.thumbs {
 	margin: 0 auto;
-	max-width: 424px;
+	max-width: 430px;
 }
 
-.dot {
+.thumb {
+	bottom: 50px;
 	width: 100px;
 	height: 50px;
 	cursor: pointer;
 	display: inline-block;
+	opacity: 0.5;
+	position: relative;
+	transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-webkit-transition: opacity 1.5s ease;
 }
 
-.dot:hover { border: 3px solid yellow; }
+.thumb:hover {
+	opacity: 0.75;
+	border: 3px solid yellow;
+}
 
-.active { border: 3px solid red; }
+.active {
+	opacity: 1;
+	border: 3px solid red;
+}
