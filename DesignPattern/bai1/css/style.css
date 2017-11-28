@@ -1,48 +1,75 @@
-#slideshow-container {
+.slideshow-container {
 	margin: 0 auto;
-	width: 100%;
+	width: 690px;
+  overflow: hidden;
 	text-align: center;
 }
 
-.myTitle { color: green; }
+.logo { color: green; }
 
-.myTitle img {
+.logo img {
 	width: 100px;
 	height: 100px;
 	margin-bottom: -30px;
 }
 
-.mySlides { display: none; }
+.slides {
+	float: left;
+	display: inline;
+}
 
-.linner img {
+.img {
 	width: 690px;
 	height: 390px;
+	opacity: 0;
+	position: relative;
+	transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-webkit-transition: opacity 1.5s ease;
 }
 
 .prev, .next {
 	width: 69px;
 	height: 69px;
-	position: absolute;
 	top: 300px;
+	opacity: 0.5;
 	cursor: pointer;
+	position: absolute;
+	display: inline;
+  -moz-transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
 }
 
 .prev { left: 15%; }
 
 .next { right: 15%; }
 
-.dots {
-	margin: 0 auto;
-	max-width: 424px;
+.prev:hover, .next:hover { opacity: 1; }
+
+.thumbs {
+	bottom: 69px;
+	position: absolute;
+	max-width: 430px;
 }
 
-.dot {
+.thumb {
 	width: 100px;
 	height: 50px;
 	cursor: pointer;
 	display: inline-block;
+	opacity: 0.5;
+	position: relative;
+	transition: opacity 1.5s ease;
+	-moz-transition: opacity 1.5s ease;
+	-webkit-transition: opacity 1.5s ease;
 }
 
-.dot:hover { border: 3px solid yellow; }
+.thumb:hover {
+	opacity: 0.75;
+	border: 3px solid yellow;
+}
 
-.active { border: 3px solid red; }
+.active {
+	opacity: 1;
+	border: 3px solid red;
+}

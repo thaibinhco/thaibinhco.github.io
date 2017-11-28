@@ -1,6 +1,5 @@
 body {
-	width: auto;
-	height: auto;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -12,12 +11,12 @@ p {
 
 #board {
 	margin: 100px;
-	padding-left:85px;
+	padding-left: 85px;
 }
 
 #name {
-	color: #00BCD4;
-	margin-top: -295px;
+	color: #4CB9E0;
+	margin-top: -300px;
 	font-size: 15px;
 	font-family: Arial;
 }
