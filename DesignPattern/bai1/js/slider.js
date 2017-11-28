@@ -5,12 +5,9 @@ $(document).ready(function() {
 		var img = $(".img");
 		var thumbs = $(".thumb");
 		var currIndex = 0
-		var speed = 1000;
 		
 		var interval;
-		var timerSlide = 2000;
-
-		var SlideModule = function() {}
+		var timerSlide;
 
 		var SlideModule = function(time) {
 			timerSlide = time;
@@ -21,18 +18,18 @@ $(document).ready(function() {
 			currIndex = newIndex;
 			startSlide(currIndex);
 			blurSlide(currIndex);
-			effectSlider(newIndex);
-			loopimg();
+			effectSlider(currIndex);
+			loopImg();
 		}
 		
 		function stopSlide(index) {
 			img.eq(index).hide();
-			$("#thumb"+(index)).removeClass('active');
+			//$("#thumb"+(index)).removeClass('active');
 		}
 		
 		function startSlide(index) {
 			img.eq(index).show();
-			$("#thumb"+(index)).addClass('active');
+			//$("#thumb"+(index)).addClass('active');
 		}
 		
 		function blurSlide(index) {
@@ -42,11 +39,12 @@ $(document).ready(function() {
 		}
 		
 		function effectSlider(index) {
+			img.animate({right: 0}, 0);
 			img.eq(index).css({"opacity": "1"});
-			img.animate({right: 345 * index}, speed);
+			img.animate({right: 690}, timerSlide);
 		}
 		
-		function loopimg() {
+		function loopImg() {
 			clearTimeout(TIME);
 			TIME = setTimeout(function() {
 				nextSlide();
@@ -62,7 +60,7 @@ $(document).ready(function() {
 			if (currIndex < 0) {
 				newIndex = img.length - 1;
 			}
-			imghow(newIndex);
+			showSlide(newIndex);
 		}
 		
 		var nextSlide = function() {
@@ -70,7 +68,6 @@ $(document).ready(function() {
 			if (currIndex > img.length - 1) {
 				newIndex = 0;
 			}
-			console.log(img.length);
 			showSlide(newIndex);
 		}
 
@@ -89,16 +86,20 @@ $(document).ready(function() {
 		return SlideModule;
 	})();
 
-	var slideModule = new SlideModule(1000);
+	var slideModule = new SlideModule(2000);
 
 	slideModule.show();
 
-	$("#prev").click(function() {
+	$(".prev").click(function() {
 		slideModule.prev();
 	});
 
-	$("#next").click(function() {
+	$(".next").click(function() {
 		slideModule.next();
+	});
+	
+	$("#thumb").click(function(index) {
+		showSlide(index);
 	});
 
 	$(".thumb").click(function() {

@@ -1,6 +1,7 @@
-#slideshow-container {
+.slideshow-container {
 	margin: 0 auto;
-	width: 100%;
+	width: 690px;
+  overflow: hidden;
 	text-align: center;
 }
 
@@ -13,12 +14,8 @@
 }
 
 .slides {
-	width: 690px;
-	height: 390px;
-	margin: auto;
-	display: inline;
 	float: left;
-	position: absolute;
+	display: inline;
 }
 
 .img {
@@ -34,22 +31,28 @@
 .prev, .next {
 	width: 69px;
 	height: 69px;
-	position: absolute;
 	top: 300px;
+	opacity: 0.5;
 	cursor: pointer;
+	position: absolute;
+	display: inline;
+  -moz-transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
 }
 
 .prev { left: 15%; }
 
 .next { right: 15%; }
 
+.prev:hover, .next:hover { opacity: 1; }
+
 .thumbs {
-	margin: 0 auto;
+	bottom: 69px;
+	position: absolute;
 	max-width: 430px;
 }
 
 .thumb {
-	bottom: 50px;
 	width: 100px;
 	height: 50px;
 	cursor: pointer;
